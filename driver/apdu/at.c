@@ -29,7 +29,7 @@ static int at_expect(char **response, const char *expected)
             printf("AT_DEBUG: %s\r\n", buffer);
         if (strcmp(buffer, "ERROR") == 0)
         {
-            return 0;
+            return -1;
         }
         else if (strcmp(buffer, "OK") == 0)
         {
@@ -168,11 +168,11 @@ static int apdu_interface_logic_channel_open(struct euicc_ctx *ctx, const uint8_
         return logic_channel;
     }
 
-    for (int i = 1; i <= 4; i++)
+   /* for (int i = 1; i <= 4; i++)
     {
         fprintf(fuart, "AT+CCHC=%d\r\n", i);
         at_expect(NULL, NULL);
-    }
+    } */
     fprintf(fuart, "AT+CCHO=\"");
     for (int i = 0; i < aid_len; i++)
     {
