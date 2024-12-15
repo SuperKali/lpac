@@ -170,7 +170,7 @@ static int apdu_interface_logic_channel_open(struct euicc_ctx *ctx, const uint8_
 
     for (int i = 1; i <= 1; i++)
     {
-        fprintf(fuart, "AT+CCCHC=%d\r\n", i);
+        fprintf(fuart, "AT+CCHC=%d\r\n", i);
         at_expect(NULL, NULL);
     } 
     fprintf(fuart, "AT+CCHO=\"");
