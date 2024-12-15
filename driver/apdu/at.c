@@ -29,7 +29,7 @@ static int at_expect(char **response, const char *expected)
             printf("AT_DEBUG: %s\r\n", buffer);
         if (strcmp(buffer, "ERROR") == 0)
         {
-            return -1;
+            return 0;
         }
         else if (strcmp(buffer, "OK") == 0)
         {
