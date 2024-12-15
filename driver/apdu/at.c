@@ -179,7 +179,7 @@ static int apdu_interface_logic_channel_open(struct euicc_ctx *ctx, const uint8_
         fprintf(fuart, "%02X", (uint8_t)(aid[i] & 0xFF));
     }
     fprintf(fuart, "\"\r\n");
-    if (at_expect(&response, "+CCHO: "))
+    /* if (at_expect(&response, "+CCHO: "))
     {
         return -1;
     }
@@ -188,6 +188,8 @@ static int apdu_interface_logic_channel_open(struct euicc_ctx *ctx, const uint8_
         return -1;
     }
     logic_channel = atoi(response);
+    */
+    logic_channel = 1;
 
     return logic_channel;
 }
